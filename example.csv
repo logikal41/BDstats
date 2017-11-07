@@ -1,0 +1,30 @@
+Product:,,,,,,,,,,,,,,
+Hierarchy:,CLIMB,ICE,ICEPRO,,,,,,,,,,,
+Creation Date:,5/9/2017,,,,,,,,,,,,,
+Created By:,Matt Berry,,,,,,,,,,,,,
+Description:,Rnd 1 Proto - updated UL Ice Screw Geometry Ult Strength Testing,,,,,,,,,,,,,
+Test Type:,Investigational,,,,,,,,,,,,,
+Raw Material No:,,,,,,,,,,,,,,
+Sub Assembly No:,,,,,,,,,,,,,,
+Purchase Order No:,,,,,,,,,,,,,,
+Production Order No:,,,,,,,,,,,,,,
+Date Code:,,,,,,,,,,,,,,
+Vendor Lot No:,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+0,1,2,3,4,5,6,7,8,9,10,11,12,13,14
+Test Run Id,Test Log Id,Procedure,Configuration,Peak Load,Rating,Mistest,Failure Type,Failure Notes,Color,Size,Packing Slip No,Spool No,Test Machine,Time Stamp
+31564,6952,load to failure-2 inch per minute,axial,655.9,0,FALSE,Other: Add To Notes Field,hanger,,primary hole,,,QA,2017-05-09T15:31:51
+31565,6952,load to failure-2 inch per minute,axial,786.5,0,FALSE,Other: Add To Notes Field,hanger,,primary hole,,,QA,2017-05-09T15:35:53
+31566,6952,load to failure-2 inch per minute,axial,2382.9,0,FALSE,Other: Add To Notes Field,screw head / hanger,,secondary hole,,,QA,2017-05-09T15:38:19
+31567,6952,load to failure-2 inch per minute,axial,2489,0,FALSE,Other: Add To Notes Field,screw head / body,,secondary hole,,,QA,2017-05-09T15:41:17
+31577,6952,load to failure-4 inch per minute,radial,3233.6,0,FALSE,Other: Add To Notes Field,hanger @ primary hole,,primary hole,,,QA,2017-05-09T16:03:53
+31578,6952,load to failure-4 inch per minute,radial,3260.2,0,FALSE,Other: Add To Notes Field,screw head,,secondary hole,,,QA,2017-05-09T16:05:40
+31580,6952,5kN Proof,radial,1125,0,FALSE,Other: Add To Notes Field,Proof,no deformation at 5kn Proof load (10 second hold),secondary hole,,,QA,2017-05-09T16:08:20
+31583,6952,7kN Proof,radial,1575,0,FALSE,Other: Add To Notes Field,Proof,slight deformation at 7kN proof (10 second hold),secondary hole,,,QA,2017-05-09T16:10:27
+31585,6952,load to failure-4 inch per minute,radial,2295.9,0,FALSE,Other: Add To Notes Field,hanger @ secondary hole,previously proofed twice,secondary hole,,,QA,2017-05-09T16:13:16
+31589,6952,load to failure-4 inch per minute,radial,3267,0,FALSE,Other: Add To Notes Field,screw head,,secondary hole,,,QA,2017-05-09T16:15:12
+31592,6952,5kN Proof,radial,1203,0,FALSE,Other: Add To Notes Field,proof,no deformation at 5kn Proof load (10 second hold),primary hole,,,QA,2017-05-09T16:17:37
+31594,6952,7kN Proof,radial,1656,0,FALSE,Other: Add To Notes Field,proof,no deformation at 7kn Proof load (10 second hold),primary hole,,,QA,2017-05-09T16:19:43
+31596,6952,load to failure-4 inch per minute,radial,3328.4,0,FALSE,Other: Add To Notes Field,hanger @ primary hole,,primary hole,,,QA,2017-05-09T16:23:05
+31597,6952,load to failure-4 inch per minute,radial,3275.2,0,FALSE,Other: Add To Notes Field,hanger @ primary hole,,primary hole,,,QA,2017-05-09T16:24:05
