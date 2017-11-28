@@ -304,7 +304,7 @@ def writeTestDoc():
 	#print all of the testData to sheet 2 (statistics)
 	populateTestDoc(sheet2, testData, 4, units)
 	#Format Column Width for Stats Data
-	sheet2.column_dimensions['A'].width = 23.5 
+	sheet2.column_dimensions['A'].width = 26.5 
 	#Print number of samples (row starts 2 after the input value for populateTestDoc)
 	sheet2.cell(row= (len(testData)+5), column= 1).value = 'n:'
 	sheet2.cell(row= (len(testData)+5), column= 1).alignment = Alignment(horizontal='right')
@@ -339,15 +339,9 @@ def writeTestDoc():
 	sheet2.cell(row= (len(testData)+10), column= 1).alignment = Alignment(horizontal='right')
 	sheet2.cell(row= (len(testData)+10), column= 2).value = threeSigma
 	sheet2.cell(row= (len(testData)+10), column= 2).alignment = Alignment(horizontal='center')
-	sheet2.cell(row= (len(testData)+10), column= 2).number_format = '0.0000'    
-	#Print Confidence Interval
-	sheet2.cell(row= (len(testData)+11), column= 1).value = selectedConfInt + ' Confidence Interval:'
-	sheet2.cell(row= (len(testData)+11), column= 1).alignment = Alignment(horizontal='right')
-	sheet2.cell(row= (len(testData)+11), column= 2).value = confidenceIntervalValue
-	sheet2.cell(row= (len(testData)+11), column= 2).alignment = Alignment(horizontal='center')
-	sheet2.cell(row= (len(testData)+11), column= 2).number_format = '0.0000'   
+	sheet2.cell(row= (len(testData)+10), column= 2).number_format = '0.0000'     
 	#Index for end of filtered data analysis
-	filteredDataEnd = len(testData)+11
+	filteredDataEnd = len(testData)+10
 	#Print QQ info 
 	if len(testData) > 1:
 		printQQ(sheet2, testData, (filteredDataEnd+2), 1) 
@@ -474,13 +468,13 @@ def printNormalCurve(sheet, sortedList, startRow, startCol):
 	sheet.cell(row=startRow+3, column= startCol+1).value = zMax #number of standard deviations
 	sheet.cell(row=startRow+3, column= startCol+1).alignment = Alignment(horizontal='center')
 	#Confidence Bounds 
-	sheet.cell(row=startRow+4, column= startCol).value = 'Lower Confidence Bound:'
+	sheet.cell(row=startRow+4, column= startCol).value = 'Lower ' + selectedConfInt + ' Confidence Bound:'
 	sheet.cell(row=startRow+4, column= startCol).alignment = Alignment(horizontal='right')
 	lowerConfBound = average - confidenceInterval #local variable
 	sheet.cell(row=startRow+4, column= startCol+1).value = lowerConfBound
 	sheet.cell(row=startRow+4, column= startCol+1).alignment = Alignment(horizontal='center')
 	sheet.cell(row=startRow+4, column= startCol+1).number_format = '0.0000'
-	sheet.cell(row=startRow+5, column= startCol).value = 'Upper Confidence Bound:'
+	sheet.cell(row=startRow+5, column= startCol).value = 'Upper ' + selectedConfInt + ' Confidence Bound:'
 	sheet.cell(row=startRow+5, column= startCol).alignment = Alignment(horizontal='right')
 	upperConfBound = average + confidenceInterval #local variable
 	sheet.cell(row=startRow+5, column= startCol+1).value = upperConfBound
