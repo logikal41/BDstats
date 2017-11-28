@@ -302,38 +302,44 @@ def writeTestDoc():
 	sheet2.cell(row= (len(testData)+5), column= 1).alignment = Alignment(horizontal='right')
 	sheet2.cell(row= (len(testData)+5), column= 2).value = len(testData)
 	sheet2.cell(row= (len(testData)+5), column= 2).alignment = Alignment(horizontal='center')   
-	#Print Average 
-	sheet2.cell(row= (len(testData)+6), column= 1).value = 'Average:'
+	#Print Mean 
+	sheet2.cell(row= (len(testData)+6), column= 1).value = 'Mean:'
 	sheet2.cell(row= (len(testData)+6), column= 1).alignment = Alignment(horizontal='right')
 	sheet2.cell(row= (len(testData)+6), column= 2).value = average
 	sheet2.cell(row= (len(testData)+6), column= 2).alignment = Alignment(horizontal='center')
-	sheet2.cell(row= (len(testData)+6), column= 2).number_format = '0.0000'  
-	#Print Standard Deviation
-	sheet2.cell(row= (len(testData)+7), column= 1).value = 'Standard Deviation:'
+	sheet2.cell(row= (len(testData)+6), column= 2).number_format = '0.0000' 
+	#Print Standard Error of Mean
+	sheet2.cell(row= (len(testData)+7), column= 1).value = 'Standard Error of Mean:'
 	sheet2.cell(row= (len(testData)+7), column= 1).alignment = Alignment(horizontal='right')
-	sheet2.cell(row= (len(testData)+7), column= 2).value = stdDev
+	sheet2.cell(row= (len(testData)+7), column= 2).value = stdDev / (len(testData)**(1/2.0))
 	sheet2.cell(row= (len(testData)+7), column= 2).alignment = Alignment(horizontal='center')
-	sheet2.cell(row= (len(testData)+7), column= 2).number_format = '0.0000' 
-	#Print Variance
-	sheet2.cell(row= (len(testData)+8), column= 1).value = 'Variance:'
+	sheet2.cell(row= (len(testData)+7), column= 2).number_format = '0.0000'  
+	#Print Standard Deviation
+	sheet2.cell(row= (len(testData)+8), column= 1).value = 'Standard Deviation:'
 	sheet2.cell(row= (len(testData)+8), column= 1).alignment = Alignment(horizontal='right')
-	sheet2.cell(row= (len(testData)+8), column= 2).value = stdDev ** 2
+	sheet2.cell(row= (len(testData)+8), column= 2).value = stdDev
 	sheet2.cell(row= (len(testData)+8), column= 2).alignment = Alignment(horizontal='center')
-	sheet2.cell(row= (len(testData)+8), column= 2).number_format = '0.0000'    
-	#Print Three Sigma
-	sheet2.cell(row= (len(testData)+9), column= 1).value = 'Lower Three Sigma:'
+	sheet2.cell(row= (len(testData)+8), column= 2).number_format = '0.0000' 
+	#Print Variance
+	sheet2.cell(row= (len(testData)+9), column= 1).value = 'Variance:'
 	sheet2.cell(row= (len(testData)+9), column= 1).alignment = Alignment(horizontal='right')
-	sheet2.cell(row= (len(testData)+9), column= 2).value = threeSigma
+	sheet2.cell(row= (len(testData)+9), column= 2).value = stdDev ** 2
 	sheet2.cell(row= (len(testData)+9), column= 2).alignment = Alignment(horizontal='center')
 	sheet2.cell(row= (len(testData)+9), column= 2).number_format = '0.0000'    
-	#Print Confidence Interval
-	sheet2.cell(row= (len(testData)+10), column= 1).value = selectedConfInt + ' Confidence Interval:'
+	#Print Three Sigma
+	sheet2.cell(row= (len(testData)+10), column= 1).value = 'Lower Three Sigma:'
 	sheet2.cell(row= (len(testData)+10), column= 1).alignment = Alignment(horizontal='right')
-	sheet2.cell(row= (len(testData)+10), column= 2).value = confidenceIntervalValue
+	sheet2.cell(row= (len(testData)+10), column= 2).value = threeSigma
 	sheet2.cell(row= (len(testData)+10), column= 2).alignment = Alignment(horizontal='center')
-	sheet2.cell(row= (len(testData)+10), column= 2).number_format = '0.0000'   
+	sheet2.cell(row= (len(testData)+10), column= 2).number_format = '0.0000'    
+	#Print Confidence Interval
+	sheet2.cell(row= (len(testData)+11), column= 1).value = selectedConfInt + ' Confidence Interval:'
+	sheet2.cell(row= (len(testData)+11), column= 1).alignment = Alignment(horizontal='right')
+	sheet2.cell(row= (len(testData)+11), column= 2).value = confidenceIntervalValue
+	sheet2.cell(row= (len(testData)+11), column= 2).alignment = Alignment(horizontal='center')
+	sheet2.cell(row= (len(testData)+11), column= 2).number_format = '0.0000'   
 	#Index for end of filtered data analysis
-	filteredDataEnd = len(testData)+10
+	filteredDataEnd = len(testData)+11
 	#Print QQ info 
 	if len(testData) > 1:
 		printQQ(sheet2, testData, (filteredDataEnd+2), 1) 
